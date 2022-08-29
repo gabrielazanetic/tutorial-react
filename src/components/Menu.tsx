@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, useState } from "react";
 
 interface MenuProps {
     children: ReactNode,
@@ -6,12 +6,22 @@ interface MenuProps {
     collapsed?: boolean
 }
 
-const Menu: FC<MenuProps> = ({ children, title, collapsed }) => {
-    const classes = "menu" + (collapsed ? " collapsed" : "");
+const Menu: FC<MenuProps> = ({ children, title, collapsed = false }) => {
+const [isCollapsed, setIsCollapsed] = useState(collapsed);
+
+    const classes = "menu" + (isCollapsed ? " collapsed" : "");
+
+    const toggleMenu = () => {
+        if(isCollapsed) {
+            setIsCollapsed(false);
+        } else {
+            setIsCollapsed(true);
+        }
+    }
 
     return (
         <>
-            {title && <h4>{title}</h4>}
+            {title && <h4 onClick={toggleMenu}>{title}</h4>}
             <ul className={classes}>{children}</ul>
         </>
     );
