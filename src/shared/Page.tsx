@@ -6,9 +6,11 @@ const Page: FC = () => {
     return (
         <>
             {/* logo */}
-            <img src={logo} alt="Logo" />
+            <img src={logo} alt="Logo" className="logo" />
 
             {/* navigation */}
+
+
             {/* login and registration / user menu */}
         </>
     );
