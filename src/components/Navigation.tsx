@@ -11,6 +11,11 @@ const Navigation: FC = () => {
                 <MenuItem>
                     <h4>Home</h4>
                 </MenuItem>
+                <MenuItem>
+                    <Menu title="Submenu" collapsed={true}>
+                        <MenuItem>Submenu item</MenuItem>
+                    </Menu>
+                </MenuItem>
             </Menu>
         </nav>
     );
