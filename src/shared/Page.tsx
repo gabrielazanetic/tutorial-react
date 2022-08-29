@@ -1,8 +1,10 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import Navigation from "../components/Navigation";
+import UserActions from "../components/UserActions";
 
 const Page: FC = () => {
     const logo = require("../logo.svg").default;
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     return (
         <header>
@@ -18,6 +20,7 @@ const Page: FC = () => {
             <Navigation />
 
             {/* login and registration / user menu */}
+            <UserActions />
         </header>
     );
 }
