@@ -6,6 +6,8 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 1rem 2rem 1rem 1rem;
+  background-color:dodgerblue;
+  color: white;
 }
 
 .logo {
@@ -18,6 +20,10 @@ header {
   max-width: 4rem;
 }
 
+nav .menu .menu .menu__item {
+  background-color: dodgerblue;
+}
+
 ul.menu {
   list-style-type: none;
   text-align: left;
@@ -25,11 +31,21 @@ ul.menu {
   margin: 0;
 }
 
+.menu .menu {
+  position: relative;
+}
+
+.menu .menu .menu__item {
+  position: absolute;
+}
+
 .menu.collapsed > * {
   display: none;
+
 }
 
 .menu__item {
   display: inline-block;
-  padding: .5rem;
+  padding: .75rem;
+  cursor: pointer;
 }
