@@ -120,8 +120,13 @@ main {
 }
 
 .jump-to-section .menu {
-  flex-direction: row;
   justify-content: space-evenly;
+}
+
+@media all and (min-width: 993px) {
+  .jump-to-section .menu {
+    flex-direction: column;
+  }
 }
 
 .step-list > * {
@@ -130,6 +135,10 @@ main {
 
 .step > * {
   padding: .5rem 0;
+}
+
+.step__text {
+  text-align: left;
 }
 
 @media all and (max-width: 992px) {
