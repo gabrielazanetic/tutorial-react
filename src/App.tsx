@@ -1,12 +1,10 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Page from './shared/Page';
+import TutorialPage from './pages/TutorialPage';
 
 function App() {
   return (
     <div className="App">
-      <Page />
+      <TutorialPage />
     </div>
   );
 }
