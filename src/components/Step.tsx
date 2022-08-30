@@ -13,7 +13,7 @@ const Step: FC<StepProps> = ({ step }) => {
 
     if(step.code) {
         code = step.code.map((lineOfCode: string, index: number) => {
-            return <div><code key={"text-" + step.id + "-" + index}>{lineOfCode}</code></div>;
+            return <div key={"text-" + step.id + "-" + index}><code>{lineOfCode}</code></div>;
         });
     }
 
