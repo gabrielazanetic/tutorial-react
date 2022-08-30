@@ -1,0 +1,58 @@
+{
+    "navigation": [
+        {
+            "id": "nav-1",
+            "title": "Home page",
+            "to": "/"
+        },
+        {
+            "id": "nav-2",
+            "title": "Tutorial",
+            "to": "/tutorial"
+        },
+        {
+            "id": "nav-3",
+            "title": "Resources",
+            "to": "/resources"
+        }
+    ],
+    "tutorial-actions": [
+        {
+            "id": "tut-act-1",
+            "title": "Copy URL",
+            "to": "/tutorial"
+        }
+    ],
+    "tutorial-jump": [
+        {
+            "id": "jump-to-step-1",
+            "title": "Step 1 - Lorem ipsum",
+            "to": "",
+            "data-step": "1"
+        },
+        {
+            "id": "jump-to-step-2",
+            "title": "Step 2 - some more lorem ipsum",
+            "to": "",
+            "data-step": "2"
+        },
+        {
+            "id": "jump-to-step-3",
+            "title": "Step 3",
+            "to": "",
+            "data-step": "3"
+        },
+        {
+            "id": "jump-to-step-4",
+            "title": "Step 4",
+            "to": "",
+            "data-step": "4"
+        },
+        {
+            "id": "jump-to-step-5",
+            "title": "Step 5",
+            "to": "",
+            "data-step": "5"
+        }
+    ]
+}
