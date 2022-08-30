@@ -4,14 +4,17 @@
 
 header {
   display: flex;
-  justify-content: space-between;
   padding: 1rem 2rem 1rem 1rem;
   background-color:dodgerblue;
   color: white;
 }
 
+main {
+  padding: 1rem;
+}
+
 .logo {
-  flex: 1;
+  flex: 0 1 15rem;
   display: inline-flex;
   align-items: center;
 }
@@ -20,32 +23,117 @@ header {
   max-width: 4rem;
 }
 
-nav .menu .menu .menu__item {
-  background-color: dodgerblue;
-}
-
-ul.menu {
+.menu {
   list-style-type: none;
   text-align: left;
   padding: 0;
   margin: 0;
-}
-
-.menu .menu {
-  position: relative;
-}
-
-.menu .menu .menu__item {
-  position: absolute;
-}
-
-.menu.collapsed > * {
-  display: none;
-
+  display: flex;
 }
 
 .menu__item {
-  display: inline-block;
   padding: .75rem;
   cursor: pointer;
+  position: relative;
+}
+
+.menu .menu {
+  position: absolute;
+  z-index: 2;
+}
+
+.menu--navigation .menu,
+.menu--user-actions .menu {
+  flex-direction: column;
+  width: 100%;
+} 
+
+.menu--navigation .menu .menu__item {
+  background-color: dodgerblue;
+}
+
+
+.menu--navigation > .menu__item::after {
+  display: block;
+  content: "";
+  border-bottom: 1px solid white;
+  transform: scaleX(0);
+  transition: transform 125ms ease;
+}
+
+.menu--navigation > .menu__item:hover::after {
+  transform: scaleX(1);
+}
+
+.menu--user-actions {
+  margin-left: auto;
+}
+
+.menu.collapsed * {
+  display: none;
+}
+
+.accordion__header {
+  cursor: pointer;
+}
+
+.accordion__body {
+  overflow: hidden;
+  opacity: 0;
+  height: 0;
+  transition: all 125ms ease;
+}
+
+.accordion__body.open {
+  height: 100%;
+  opacity: 1;
+}
+
+.container {
+  display: flex;
+}
+
+.column {
+  padding: 1rem;
+  vertical-align: top;
+  flex: 1;
+}
+
+.step-list {
+  min-width: 40rem;
+}
+
+.column--sidebar {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  background-color:aliceblue;
+  border: 1px solid cadetblue;
+  border-radius: 5px;
+}
+
+@media all and (min-width: 993px) {
+  .column--sidebar {
+    max-width: 20rem;
+    margin-top: 2.5rem;
+  }
+}
+
+.jump-to-section .menu {
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.step-list > * {
+  margin: 1.5rem 0;
+}
+
+.step > * {
+  padding: .5rem 0;
+}
+
+@media all and (max-width: 992px) {
+  .tutorial-page .container--with-sidebar {
+    flex-direction: column;
+  }
 }
