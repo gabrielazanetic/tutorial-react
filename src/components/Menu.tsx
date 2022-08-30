@@ -3,13 +3,16 @@ import { FC, ReactNode, useState } from "react";
 interface MenuProps {
     children: ReactNode,
     title?: string
-    collapsed?: boolean
+    collapsed?: boolean,
+    className?: string,
 }
 
-const Menu: FC<MenuProps> = ({ children, title, collapsed = false }) => {
+const Menu: FC<MenuProps> = ({ children, title, collapsed = false, className = "" }) => {
 const [isCollapsed, setIsCollapsed] = useState(collapsed);
 
-    const classes = "menu" + (isCollapsed ? " collapsed" : "");
+    const classes = "menu" 
+        + (isCollapsed ? " collapsed" : "") 
+        + (className.length ? " " + className : "");
 
     const toggleMenu = () => {
         if(isCollapsed) {
@@ -21,7 +24,7 @@ const [isCollapsed, setIsCollapsed] = useState(collapsed);
 
     return (
         <>
-            {title && <h4 onClick={toggleMenu}>{title}</h4>}
+            {title && <strong onClick={toggleMenu}>{title}</strong>}
             <ul className={classes}>{children}</ul>
         </>
     );
