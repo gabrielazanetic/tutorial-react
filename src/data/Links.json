@@ -26,13 +26,13 @@
     "tutorial-jump": [
         {
             "id": "jump-to-step-1",
-            "title": "Step 1 - Lorem ipsum",
+            "title": "Step 1 - Figuring out the component hierarchy",
             "to": "",
             "data-step": "1"
         },
         {
             "id": "jump-to-step-2",
-            "title": "Step 2 - some more lorem ipsum",
+            "title": "Step 2 - Starting the project",
             "to": "",
             "data-step": "2"
         },
