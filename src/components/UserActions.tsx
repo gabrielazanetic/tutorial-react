@@ -2,12 +2,14 @@ import { FC } from "react";
 import Menu from "./Menu";
 import MenuItem from "./MenuItem";
 
-const UserActions: FC = () => {
-    const isLoggedIn = false;
+interface UserActionsProps {
+    status: boolean
+};
 
+const UserActions: FC<UserActionsProps> = ({ status = false }) => {
     let userActions;
 
-    if(isLoggedIn) {
+    if(!status) {
         userActions = (
             <>
                 <MenuItem>Login</MenuItem>
@@ -22,7 +24,7 @@ const UserActions: FC = () => {
             </>
         );
     }
-    return <Menu>{userActions}</Menu>;
+    return <Menu className="menu--user-actions">{userActions}</Menu>;
 }
 
 export default UserActions;
