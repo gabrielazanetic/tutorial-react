@@ -1,5 +1,4 @@
 import { FC, ReactNode, useState } from "react";
-
 interface MenuProps {
     children: ReactNode,
     title?: ReactNode | string
@@ -8,7 +7,22 @@ interface MenuProps {
     className?: string
 }
 
-const Menu: FC<MenuProps> = ({ children, title, collapsed = false, canCollapse = false, className = "" }) => {
+type SubmenuProps = 
+    | {
+        canCollapse: true; 
+        title: ReactNode | string
+    }
+    | {
+        children: ReactNode;
+        title?: never;
+        collapsed?: never;
+        canCollapse?: never;
+        className?: string;
+    }
+
+type Props = MenuProps & SubmenuProps
+
+const Menu: FC<Props> = ({ children, title, collapsed = false, canCollapse = false, className = "" }) => {
     const [isCollapsed, setIsCollapsed] = useState(collapsed);
 
     const classes = "menu" 
