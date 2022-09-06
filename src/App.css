@@ -84,6 +84,7 @@ a {
 }
 
 .menu.collapsed {
+  overflow: hidden;
   opacity: 0;
   height: 0;
 }
