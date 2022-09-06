@@ -7,7 +7,9 @@ const Navigation: FC = () => {
     return ( 
         <nav>
             <Menu className="menu--navigation">
-                <MenuItem>Home</MenuItem>
+                <MenuItem>
+                    <NavLink to="/">Home</NavLink>
+                </MenuItem>
                 <MenuItem>
                     <Menu title={<NavLink to="/tutorial">Tutorial</NavLink>} canCollapse={true} collapsed={true}>
                         <MenuItem>Step 1</MenuItem>
