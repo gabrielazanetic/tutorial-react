@@ -12,11 +12,11 @@ const isLoggedIn = true;
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/tutorial" element={<TutorialPage />} />
+          <Route path="/" element={<HomePage isLoggedIn={isLoggedIn} />} />
+          <Route path="/tutorial" element={<TutorialPage isLoggedIn={isLoggedIn} />} />
           <Route path="/my-profile" element={isLoggedIn ? <ProfilePage /> : <Navigate to="/anything" />} />
 
-          <Route path="*" element={<NotFoundPage />} />
+          <Route path="*" element={<NotFoundPage isLoggedIn={isLoggedIn} />} />
         </Routes>
       </BrowserRouter>
     </div>

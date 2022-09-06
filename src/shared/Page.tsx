@@ -4,12 +4,12 @@ import UserActions from "../components/UserActions";
 
 interface PageProps {
     children: ReactNode,
-    className?: string
+    className?: string,
+    isLoggedIn: boolean
 };
 
-const Page: FC<PageProps> = ({ children, className }) => {
+const Page: FC<PageProps> = ({ children, className, isLoggedIn }) => {
     const logo = require("../logo.svg").default;
-    const isLoggedIn = false;
 
     return (<>
         <header>

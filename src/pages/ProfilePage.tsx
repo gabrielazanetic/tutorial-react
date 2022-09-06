@@ -3,7 +3,7 @@ import Page from "../shared/Page";
 
 const ProfilePage: FC = () => {
     return (
-        <Page>
+        <Page isLoggedIn={true}>
             <h1>Profile Page</h1>
         </Page>
     );

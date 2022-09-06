@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { Link, NavLink } from "react-router-dom";
 import Menu from "./Menu";
 import MenuItem from "./MenuItem";
 
@@ -19,8 +20,8 @@ const UserActions: FC<UserActionsProps> = ({ status = false }) => {
     } else {
         userActions = (
             <>
-                <MenuItem>My profile</MenuItem>
-                <MenuItem>Log out</MenuItem>
+                <MenuItem><NavLink to="/my-profile">My profile</NavLink></MenuItem>
+                <MenuItem><Link to="/logout">Log out</Link></MenuItem>
             </>
         );
     }

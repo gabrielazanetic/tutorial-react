@@ -4,9 +4,13 @@ import JumpToSection from "../components/JumpToSection";
 import StepList from "../components/StepList";
 import Page from "../shared/Page";
 
-const TutorialPage: FC = () => {
+interface TutorialPageProps {
+  isLoggedIn: boolean
+}
+
+const TutorialPage: FC<TutorialPageProps> = ({ isLoggedIn }) => {
     return (
-        <Page className="tutorial-page">
+        <Page className="tutorial-page" isLoggedIn={isLoggedIn}>
           <SidebarLayout 
             left={<JumpToSection />}
             right={<StepList />}
