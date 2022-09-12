@@ -1,19 +1,18 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../utils/context";
 import Menu from "./Menu";
 import MenuItem from "./MenuItem";
 
-interface UserActionsProps {
-    status: boolean
-};
+const UserActions: FC = () => {
+    const authContext = useContext(AuthContext);
 
-const UserActions: FC<UserActionsProps> = ({ status = false }) => {
     let userActions;
 
-    if(!status) {
+    if(!authContext.loggedIn) {
         userActions = (
             <>
-                <MenuItem>Login</MenuItem>
+                <MenuItem><NavLink to="/login">Login</NavLink></MenuItem>
                 <MenuItem>Register</MenuItem>
             </>
         );

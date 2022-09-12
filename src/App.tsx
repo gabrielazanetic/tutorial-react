@@ -1,24 +1,40 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
-import ProfilePage from './pages/ProfilePage';
 import TutorialPage from './pages/TutorialPage';
+import AuthPage from './pages/AuthPage';
+import { AuthContext } from './utils/context';
+import ProfilePage from './pages/ProfilePage';
 
 function App() {
-const isLoggedIn = true;
+  const toggleAuth = () => {
+    if(isLoggedIn === false) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  };
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomePage isLoggedIn={isLoggedIn} />} />
-          <Route path="/tutorial" element={<TutorialPage isLoggedIn={isLoggedIn} />} />
-          <Route path="/my-profile" element={isLoggedIn ? <ProfilePage /> : <Navigate to="/anything" />} />
+      <AuthContext.Provider value={{loggedIn: isLoggedIn, toggleAuth}}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/tutorial" element={<TutorialPage />} />
 
-          <Route path="*" element={<NotFoundPage isLoggedIn={isLoggedIn} />} />
-        </Routes>
-      </BrowserRouter>
+            <Route path="/my-profile" element={<ProfilePage />} />
+            <Route path="/login" element={<AuthPage />} />
+            <Route path="/logout" element={<AuthPage removeAuth={true} />} />
+
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </BrowserRouter>
+      </AuthContext.Provider>
     </div>
   );
 }
