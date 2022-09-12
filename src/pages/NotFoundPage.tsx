@@ -1,14 +1,10 @@
 import { FC } from "react";
 import Page from "../shared/Page";
 
-interface NotFoundPageProps {
-    isLoggedIn: boolean
-}
-
-const NotFoundPage: FC<NotFoundPageProps> = ({ isLoggedIn }) => {
+const NotFoundPage: FC = () => {
     return (
-        <Page isLoggedIn={isLoggedIn}>
-            <h1>404 PAGE</h1>
+        <Page>
+            <h1>Page not found</h1>
         </Page>
     );
 }

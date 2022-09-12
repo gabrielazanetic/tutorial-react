@@ -1,13 +1,9 @@
 import { FC } from "react";
 import Page from "../shared/Page";
 
-interface HomePageProps {
-    isLoggedIn: boolean
-}
-
-const HomePage: FC<HomePageProps> = ({ isLoggedIn }) => {
+const HomePage: FC = () => {
     return (
-        <Page isLoggedIn={isLoggedIn}>
+        <Page>
             <p>Welcome to the React tutorial!</p>
         </Page>
     );

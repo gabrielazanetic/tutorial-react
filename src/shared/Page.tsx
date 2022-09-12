@@ -5,10 +5,9 @@ import UserActions from "../components/UserActions";
 interface PageProps {
     children: ReactNode,
     className?: string,
-    isLoggedIn: boolean
 };
 
-const Page: FC<PageProps> = ({ children, className, isLoggedIn }) => {
+const Page: FC<PageProps> = ({ children, className }) => {
     const logo = require("../logo.svg").default;
 
     return (<>
@@ -25,7 +24,7 @@ const Page: FC<PageProps> = ({ children, className, isLoggedIn }) => {
             <Navigation />
 
             {/* login and registration / user menu */}
-            <UserActions status={isLoggedIn} />
+            <UserActions />
         </header>
         <main className={className}>
             {children}
