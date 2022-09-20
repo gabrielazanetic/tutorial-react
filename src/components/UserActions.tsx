@@ -13,7 +13,7 @@ const UserActions: FC = () => {
         userActions = (
             <>
                 <MenuItem><NavLink to="/login">Login</NavLink></MenuItem>
-                <MenuItem>Register</MenuItem>
+                <MenuItem><NavLink to="/register">Register</NavLink></MenuItem>
             </>
         );
     } else {
