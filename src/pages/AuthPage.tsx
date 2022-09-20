@@ -2,7 +2,6 @@ import { FC, useContext, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import { AuthContext } from "../utils/context";
 import LoginPage from "./LoginPage";
-import ProfilePage from "./ProfilePage";
 
 interface AuthPageProps {
     removeAuth?: boolean
@@ -15,7 +14,7 @@ const AuthPage: FC<AuthPageProps> = ({ removeAuth }) => {
         if(removeAuth === true) {
             authContext.toggleAuth();
         }
-    }, [removeAuth]);
+    }, [removeAuth, authContext]);
 
     if(authContext.loggedIn === true) {
         return <Navigate to="/my-profile" replace={true} />
