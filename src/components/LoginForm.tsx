@@ -6,7 +6,7 @@ const LoginForm: FC = () => {
     const [text, setText] = useState("");
     const [password, setPassword] = useState("");
 
-    const auth = useContext(AuthContext);
+    const authContext = useContext(AuthContext);
 
     const handleTextChange = (e: any) => {
         setText(e.target.value);
@@ -18,26 +18,26 @@ const LoginForm: FC = () => {
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
+
         const authUser = users.find((user) => user.username === text && user.password === password);
 
         if(authUser !== undefined) {
-            auth.toggleAuth();
+            authContext.toggleAuth();
         }
     };
 
     return (
-        <form id="login-form" className="login-form" onSubmit={handleSubmit}>
-            <div className="username">
+        <form id="login-form" className="form login-form" onSubmit={handleSubmit}>
+            <div className="form-element username">
                 <label htmlFor="username">Username: </label>
                 <input type="text" name="username" id="username" value={text} onChange={handleTextChange} />
             </div>
-            <div className="password">
+            <div className="form-element password">
                 <label htmlFor="password">Password: </label>
                 <input type="password" name="password" id="password" value={password} onChange={handlePasswordChange} />
             </div>
-            <div className="submit">
-                <label htmlFor="submit"></label>
-                <input type="submit" name="submit" id="submit" value="Log in" />
+            <div className="form-element submit">
+                <input type="submit" name="submit" id="submit" className="btn" value="Log in" />
             </div>
         </form>
     );
