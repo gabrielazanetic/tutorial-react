@@ -2,6 +2,8 @@ export const users = [
     {
         id: 1,
         username: "admin",
-        password: "test"
+        password: "testtest",
+        fullname: "Gabriela Zanetic",
+        birthday: new Date("20-01-1993"),
     }
 ];
