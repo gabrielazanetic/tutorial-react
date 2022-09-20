@@ -54,12 +54,14 @@ a {
   width: 100%;
 } 
 
-.menu--navigation a {
+.menu--navigation a,
+.menu--user-actions a {
   color: white;
 }
 
-.menu--navigation a.active {
-  color:floralwhite;
+.menu--navigation a.active,
+.menu--user-actions a.active {
+  color:bisque;
 }
 
 .menu--navigation .menu .menu__item {
@@ -161,4 +163,72 @@ a {
   .tutorial-page .container--with-sidebar {
     flex-direction: column;
   }
+}
+
+.form {
+  max-width: 20rem;
+  margin: 0 auto;
+}
+
+.login-form {
+  max-width: 16rem;
+}
+
+.form-element {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .5rem;
+  flex-wrap: wrap;
+}
+
+.form-element label {
+  align-self: center;
+}
+
+.form-element input:not([type=submit]) {
+  appearance: none;
+  border: unset;
+  border-bottom: 1px solid dodgerblue;
+  background: transparent;
+  padding: .5rem;
+}
+
+.form-element input:focus {
+  outline: 1px solid #eee;
+}
+
+.form-element .message {
+  flex: 1 0 100%;
+  color: red;
+  font-size: .7rem;
+}
+
+.form-element.error input {
+  border: 1px solid red;
+}
+
+.form-element.submit {
+  justify-content: center;
+}
+
+.form-element .react-datepicker-wrapper {
+  display: inline-block;
+  width: auto;
+  margin-left: auto;
+}
+
+.btn {
+  appearance: none;
+  border: 2px solid transparent;
+  padding: .5rem;
+  background-color: dodgerblue;
+  color: white;
+  transition: all 125ms ease;
+}
+
+.btn:hover {
+  cursor: pointer;
+  color: dodgerblue;
+  background-color: white;
+  border-color: dodgerblue;
 }
