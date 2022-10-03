@@ -4,6 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useNavigate } from "react-router-dom";
 import { AuthContext, UserContext } from "../utils/context";
 import { isEmailValid, isFilled, isLongerThan, isPasswordMatching } from "../utils/validators";
+import TextInput from "./TextInput";
 
 const RegistrationForm: FC = () => {
 
@@ -137,7 +138,7 @@ const RegistrationForm: FC = () => {
 
             <div className={"form-element fullname" + (messages.fullname[0]?.length ? " error" : "")}>
                 <label htmlFor="fullname">Full Name: </label>
-                <input ref={fullnameRef} type="text" name="fullname" value={registrationData.fullname} onChange={handleInputChange} />
+                <TextInput ref={fullnameRef} type="text" name="fullname" value={registrationData.fullname} onChange={handleInputChange} />
                 {messages.fullname.length ? <small className="message fullname-message">{messages.fullname.join(" ")}</small> : ""}
             </div>
             <div className="form-element birthday">
@@ -146,22 +147,22 @@ const RegistrationForm: FC = () => {
             </div>
             <div className={"form-element email" + (messages.email[0]?.length ? " error" : "")}>
                 <label htmlFor="email">Email address: </label>
-                <input ref={emailRef} type="email" name="email" value={registrationData.email} onChange={handleInputChange} />
+                <TextInput ref={emailRef} type="email" name="email" value={registrationData.email} onChange={handleInputChange} />
                 {messages.email.length ? <small className="message email-message">{messages.email.join(" ")}</small> : ""}
             </div>
             <div className={"form-element username" + (messages.username[0]?.length ? " error" : "")}>
                 <label htmlFor="username">Username: </label>
-                <input ref={usernameRef} type="text" name="username" value={registrationData.username} onChange={handleInputChange} />
+                <TextInput ref={usernameRef} type="text" name="username" value={registrationData.username} onChange={handleInputChange} />
                 {messages.username.length ? <small className="message username-message">{messages.username.join(" ")}</small> : ""}
             </div>
             <div className={"form-element password" + (messages.password[0]?.length ? " error" : "")}>
                 <label htmlFor="password">Password: </label>
-                <input ref={passwordRef} type="password" name="password" value={registrationData.password} onChange={handleInputChange} />
+                <TextInput ref={passwordRef} type="password" name="password" value={registrationData.password} onChange={handleInputChange} />
                 {messages.password.length ? <small className="message password-message">{messages.password.join(" ")}</small> : ""}
             </div>
             <div className={"form-element confirm" + (messages.password[0]?.length ? " error" : "")}>
                 <label htmlFor="confirm">Confirm password: </label>
-                <input ref={confirmRef} type="password" name="confirm" value={registrationData.confirm} onChange={handleInputChange} />
+                <TextInput ref={confirmRef} type="password" name="confirm" value={registrationData.confirm} onChange={handleInputChange} />
             </div>
             <div className="form-element submit">
                 <input type="submit" name="submit" value="Register" className="btn" />
