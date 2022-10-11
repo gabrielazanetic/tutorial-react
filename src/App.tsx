@@ -8,6 +8,7 @@ import AuthPage from './pages/AuthPage';
 import { AuthContext, UserContext } from './utils/context';
 import ProfilePage from './pages/ProfilePage';
 import RegistrationPage from './pages/RegistrationPage';
+import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
   
@@ -33,23 +34,25 @@ function App() {
 
   return (
     <div className="App">
-      <AuthContext.Provider value={{loggedIn: isLoggedIn, toggleAuth}}>
-        <UserContext.Provider value={{...user, setAuthUser}}>
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/tutorial" element={<TutorialPage />} />
+      <ErrorBoundary>
+        <AuthContext.Provider value={{loggedIn: isLoggedIn, toggleAuth}}>
+          <UserContext.Provider value={{...user, setAuthUser}}>
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/tutorial" element={<TutorialPage />} />
 
-              <Route path="/my-profile" element={<ProfilePage />} />
-              <Route path="/login" element={<AuthPage />} />
-              <Route path="/logout" element={<AuthPage removeAuth={true} />} />
-              <Route path="/register" element={<RegistrationPage />} />
+                <Route path="/my-profile" element={<ProfilePage />} />
+                <Route path="/login" element={<AuthPage />} />
+                <Route path="/logout" element={<AuthPage removeAuth={true} />} />
+                <Route path="/register" element={<RegistrationPage />} />
 
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          </BrowserRouter>
-        </UserContext.Provider>
-      </AuthContext.Provider>
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            </BrowserRouter>
+          </UserContext.Provider>
+        </AuthContext.Provider>
+      </ErrorBoundary>
     </div>
   );
 }
