@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`opens and closes accordion 1`] = `
+<div
+  className="accordion"
+>
+  <div
+    className="accordion__header"
+    onClick={[Function]}
+  >
+    <h3>
+      accordion
+    </h3>
+  </div>
+  <div
+    className="accordion__body"
+  >
+    Hello
+  </div>
+</div>
+`;
+
+exports[`opens and closes accordion 2`] = `
+<div
+  className="accordion"
+>
+  <div
+    className="accordion__header"
+    onClick={[Function]}
+  >
+    <h3>
+      accordion
+    </h3>
+  </div>
+  <div
+    className="accordion__body open"
+  >
+    Hello
+  </div>
+</div>
+`;
+
+exports[`opens and closes accordion 3`] = `
+<div
+  className="accordion"
+>
+  <div
+    className="accordion__header"
+    onClick={[Function]}
+  >
+    <h3>
+      accordion
+    </h3>
+  </div>
+  <div
+    className="accordion__body"
+  >
+    Hello
+  </div>
+</div>
+`;

@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`changes class when hovered 1`] = `
+<div
+  onMouseLeave={[Function]}
+>
+  <div
+    onMouseEnter={[Function]}
+  >
+    <a
+      aria-current="page"
+      className="active"
+      href="/"
+      onClick={[Function]}
+    >
+      Home
+    </a>
+  </div>
+  <ul
+    className="menu  collapsed"
+  >
+    <li
+      className="menu__item"
+    >
+      Step 1
+    </li>
+    <li
+      className="menu__item"
+    >
+      Step 2
+    </li>
+    <li
+      className="menu__item"
+    >
+      Step 3
+    </li>
+    <li
+      className="menu__item"
+    >
+      Step 4
+    </li>
+    <li
+      className="menu__item"
+    >
+      Step 5
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`changes class when hovered 2`] = `
+<div
+  onMouseLeave={[Function]}
+>
+  <div
+    onMouseEnter={[Function]}
+  >
+    <a
+      aria-current="page"
+      className="active"
+      href="/"
+      onClick={[Function]}
+    >
+      Home
+    </a>
+  </div>
+  <ul
+    className="menu"
+  >
+    <li
+      className="menu__item"
+    >
+      Step 1
+    </li>
+    <li
+      className="menu__item"
+    >
+      Step 2
+    </li>
+    <li
+      className="menu__item"
+    >
+      Step 3
+    </li>
+    <li
+      className="menu__item"
+    >
+      Step 4
+    </li>
+    <li
+      className="menu__item"
+    >
+      Step 5
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`changes class when hovered 3`] = `
+<div
+  onMouseLeave={[Function]}
+>
+  <div
+    onMouseEnter={[Function]}
+  >
+    <a
+      aria-current="page"
+      className="active"
+      href="/"
+      onClick={[Function]}
+    >
+      Home
+    </a>
+  </div>
+  <ul
+    className="menu  collapsed"
+  >
+    <li
+      className="menu__item"
+    >
+      Step 1
+    </li>
+    <li
+      className="menu__item"
+    >
+      Step 2
+    </li>
+    <li
+      className="menu__item"
+    >
+      Step 3
+    </li>
+    <li
+      className="menu__item"
+    >
+      Step 4
+    </li>
+    <li
+      className="menu__item"
+    >
+      Step 5
+    </li>
+  </ul>
+</div>
+`;
