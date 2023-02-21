@@ -1,12 +1,13 @@
 import { FC, useContext, useState } from "react";
 import { users } from "../data/users";
-import { AuthContext } from "../utils/context";
+import { AuthContext, UserContext } from "../utils/context";
 
 const LoginForm: FC = () => {
     const [text, setText] = useState("");
     const [password, setPassword] = useState("");
 
     const authContext = useContext(AuthContext);
+    const userContext = useContext(UserContext);
 
     const handleTextChange = (e: any) => {
         setText(e.target.value);
@@ -23,6 +24,7 @@ const LoginForm: FC = () => {
 
         if(authUser !== undefined) {
             authContext.toggleAuth();
+            userContext.setAuthUser(authUser);
         }
     };
 

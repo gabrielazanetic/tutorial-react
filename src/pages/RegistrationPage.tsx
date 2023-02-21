@@ -5,7 +5,7 @@ import Page from "../shared/Page";
 const RegistrationPage: FC = () => {
     return (
         <Page>
-            <h2>Register</h2>
+            <h1>Register</h1>
             <RegistrationForm />
         </Page>
     );

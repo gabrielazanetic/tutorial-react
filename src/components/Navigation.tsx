@@ -23,7 +23,9 @@ const Navigation: FC = () => {
                     </SubMenu>
                 </MenuItem>
                 <MenuItem>Useful links</MenuItem>
-                <MenuItem>Reviews</MenuItem>
+                <MenuItem>
+                <NavLink to="/reviews">Reviews</NavLink>
+                </MenuItem>
             </Menu>
         </nav>
     );

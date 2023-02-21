@@ -5,7 +5,7 @@ import Page from "../shared/Page";
 const LoginPage: FC = () => {
     return (
         <Page>
-            <h2>Log in here</h2>
+            <h1>Log in here</h1>
             <LoginForm />
         </Page>
     );

@@ -1,4 +1,4 @@
-import { FC, useContext, useRef, useState } from "react";
+import { FC, useCallback, useContext, useRef, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useNavigate } from "react-router-dom";
@@ -55,7 +55,7 @@ const RegistrationForm: FC = () => {
         setRegistrationData(newRegistrationData);
     };
 
-    const handleFormSubmit = (e: any) => {
+    const handleFormSubmit = useCallback((e: any) => {
         e.preventDefault();
 
         let failed = false;
@@ -131,7 +131,7 @@ const RegistrationForm: FC = () => {
             authContext.toggleAuth();
             navigate("/my-profile");
         }
-    };
+    }, [authContext, messages, navigate, registrationData, userContext]);
 
     return (
         <form id="registration-form"  className="form registration-form" onSubmit={handleFormSubmit}>
