@@ -1,4 +1,5 @@
 import { FC, useRef, useState } from "react";
+import Rating from "./Rating";
 import TextInput from "./TextInput";
 
 interface ReviewFormProps {
@@ -13,6 +14,7 @@ const ReviewForm: FC<ReviewFormProps> = ({ reviewsList, setReviewsList }) => {
 	const values = {
 		title: "",
 		text: "",
+		score: "",
 	};
 
 	const [formValues, setFormValues] = useState(values);
@@ -33,6 +35,21 @@ const ReviewForm: FC<ReviewFormProps> = ({ reviewsList, setReviewsList }) => {
 		});
 	};
 
+	const handleRatingChange = (score: number) => {
+		let scoreString = "";
+
+		for (let i = 1; i <= score; i++) {
+			scoreString += "*";
+		}
+
+		console.log(scoreString);
+
+		setFormValues({
+			...formValues,
+			score: scoreString,
+		});
+	};
+
 	const handleFormSubmit = (event: any) => {
 		event.preventDefault();
 
@@ -47,7 +64,7 @@ const ReviewForm: FC<ReviewFormProps> = ({ reviewsList, setReviewsList }) => {
 			id: id + 1,
 			date: new Date(),
 			title: formValues.title,
-			score: "***",
+			score: formValues.score,
 			review: formValues.text,
 		};
 
@@ -61,6 +78,7 @@ const ReviewForm: FC<ReviewFormProps> = ({ reviewsList, setReviewsList }) => {
 			style={{ margin: "25px auto" }}
 			onSubmit={handleFormSubmit}
 		>
+			<Rating handleRatingChange={handleRatingChange} />
 			<label>Title of review:</label>
 			<TextInput
 				type="text"

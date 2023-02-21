@@ -1,234 +1,261 @@
 .App {
-  text-align: center;
-}
-
-header {
-  display: flex;
-  padding: 1rem 2rem 1rem 1rem;
-  background-color:dodgerblue;
-  color: white;
-}
-
-main {
-  padding: 1rem;
+	text-align: center;
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .logo {
-  flex: 0 1 15rem;
-  display: inline-flex;
-  align-items: center;
+	flex: 0 1 15rem;
+	display: inline-flex;
+	align-items: center;
 }
 
 .logo__image {
-  max-width: 4rem;
+	max-width: 4rem;
 }
 
+/*  LAYOUT  */
+
+header {
+	display: flex;
+	padding: 1rem 2rem 1rem 1rem;
+	background-color: dodgerblue;
+	color: white;
+}
+
+main {
+	padding: 1rem;
+}
+
+.container {
+	display: flex;
+}
+
+.column {
+	padding: 1rem;
+	vertical-align: top;
+	flex: 1;
+}
+
+.column--sidebar {
+	height: 100%;
+	width: 100%;
+	padding: 1rem;
+	background-color: aliceblue;
+	border: 1px solid cadetblue;
+	border-radius: 5px;
+}
+
+@media all and (min-width: 993px) {
+	.column--sidebar {
+		max-width: 20rem;
+		margin-top: 2.5rem;
+	}
+}
+
+/*  MENU AND NAVIGATION  */
+
 .menu {
-  list-style-type: none;
-  text-align: left;
-  padding: 0;
-  margin: 0;
-  display: flex;
+	list-style-type: none;
+	text-align: left;
+	padding: 0;
+	margin: 0;
+	display: flex;
 }
 
 .menu__item {
-  padding: .75rem;
-  cursor: pointer;
-  position: relative;
+	padding: 0.75rem;
+	cursor: pointer;
+	position: relative;
 }
 
 .menu .menu {
-  position: absolute;
-  z-index: 2;
-  opacity: 1;
-  transition: all 125ms ease;
+	position: absolute;
+	z-index: 2;
+	opacity: 1;
+	transition: all 125ms ease;
 }
 
 .menu--navigation .menu,
 .menu--user-actions .menu {
-  flex-direction: column;
-  width: 100%;
-} 
+	flex-direction: column;
+	width: 100%;
+}
 
 .menu--navigation a,
 .menu--user-actions a {
-  color: white;
+	color: white;
 }
 
 .menu--navigation a.active,
 .menu--user-actions a.active {
-  color:bisque;
+	color: bisque;
 }
 
 .menu--navigation .menu .menu__item {
-  background-color: dodgerblue;
-  text-align: center;
+	background-color: dodgerblue;
+	text-align: center;
 }
 
 .menu--navigation .menu__item::after {
-  display: block;
-  content: "";
-  border-bottom: 1px solid white;
-  transform: scaleX(0);
-  transition: transform 125ms ease;
+	display: block;
+	content: "";
+	border-bottom: 1px solid white;
+	transform: scaleX(0);
+	transition: transform 125ms ease;
 }
 
 .menu--navigation .menu__item:hover::after {
-  transform: scaleX(1);
+	transform: scaleX(1);
 }
 
 .menu--user-actions {
-  margin-left: auto;
+	margin-left: auto;
 }
 
 .menu.collapsed {
-  overflow: hidden;
-  opacity: 0;
-  height: 0;
+	overflow: hidden;
+	opacity: 0;
+	height: 0;
 }
 
-.accordion__header {
-  cursor: pointer;
-}
-
-.accordion__body {
-  overflow: hidden;
-  opacity: 0;
-  height: 0;
-  transition: all 125ms ease;
-}
-
-.accordion__body.open {
-  height: 100%;
-  opacity: 1;
-}
-
-.container {
-  display: flex;
-}
-
-.column {
-  padding: 1rem;
-  vertical-align: top;
-  flex: 1;
-}
-
-.step-list {
-  min-width: 40rem;
-}
-
-.column--sidebar {
-  height: 100%;
-  width: 100%;
-  padding: 1rem;
-  background-color:aliceblue;
-  border: 1px solid cadetblue;
-  border-radius: 5px;
-}
-
-@media all and (min-width: 993px) {
-  .column--sidebar {
-    max-width: 20rem;
-    margin-top: 2.5rem;
-  }
-}
-
-.jump-to-section .menu {
-  justify-content: space-evenly;
-}
-
-@media all and (min-width: 993px) {
-  .jump-to-section .menu {
-    flex-direction: column;
-  }
-}
-
-.step-list > * {
-  margin: 1.5rem 0;
-}
-
-.step > * {
-  padding: .5rem 0;
-}
-
-.step__text {
-  text-align: left;
-}
-
-@media all and (max-width: 992px) {
-  .tutorial-page .container--with-sidebar {
-    flex-direction: column;
-  }
-}
+/*  FORM  */
 
 .form {
-  max-width: 20rem;
-  margin: 0 auto;
-}
-
-.login-form {
-  max-width: 16rem;
+	max-width: 20rem;
+	margin: 0 auto;
 }
 
 .form-element {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: .5rem;
-  flex-wrap: wrap;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 0.5rem;
+	flex-wrap: wrap;
 }
 
 .form-element label {
-  align-self: center;
+	align-self: center;
 }
 
-.form-element input:not([type=submit]) {
-  appearance: none;
-  border: unset;
-  border-bottom: 1px solid dodgerblue;
-  background: transparent;
-  padding: .5rem;
+.form-element input:not([type="submit"]) {
+	appearance: none;
+	border: unset;
+	border-bottom: 1px solid dodgerblue;
+	background: transparent;
+	padding: 0.5rem;
 }
 
 .form-element input:focus {
-  outline: 1px solid #eee;
+	outline: 1px solid #eee;
 }
 
 .form-element .message {
-  flex: 1 0 100%;
-  color: red;
-  font-size: .7rem;
+	flex: 1 0 100%;
+	color: red;
+	font-size: 0.7rem;
 }
 
 .form-element.error input {
-  border: 1px solid red;
+	border: 1px solid red;
 }
 
 .form-element.submit {
-  justify-content: center;
+	justify-content: center;
 }
 
 .form-element .react-datepicker-wrapper {
-  display: inline-block;
-  width: auto;
-  margin-left: auto;
+	display: inline-block;
+	width: auto;
+	margin-left: auto;
+}
+
+.login-form {
+	max-width: 16rem;
 }
 
 .btn {
-  appearance: none;
-  border: 2px solid transparent;
-  padding: .5rem;
-  background-color: dodgerblue;
-  color: white;
-  transition: all 125ms ease;
+	appearance: none;
+	border: 2px solid transparent;
+	padding: 0.5rem;
+	background-color: dodgerblue;
+	color: white;
+	transition: all 125ms ease;
 }
 
 .btn:hover {
-  cursor: pointer;
-  color: dodgerblue;
-  background-color: white;
-  border-color: dodgerblue;
+	cursor: pointer;
+	color: dodgerblue;
+	background-color: white;
+	border-color: dodgerblue;
+}
+
+/*  ACCORDION  */
+
+.accordion__header {
+	cursor: pointer;
+}
+
+.accordion__body {
+	overflow: hidden;
+	opacity: 0;
+	height: 0;
+	transition: all 125ms ease;
+}
+
+.accordion__body.open {
+	height: 100%;
+	opacity: 1;
+}
+
+.step-list {
+	min-width: 40rem;
+}
+
+/*  JUMP TO SECTION  */
+
+.jump-to-section .menu {
+	justify-content: space-evenly;
+}
+
+@media all and (min-width: 993px) {
+	.jump-to-section .menu {
+		flex-direction: column;
+	}
+}
+
+.step-list > * {
+	margin: 1.5rem 0;
+}
+
+.step > * {
+	padding: 0.5rem 0;
+}
+
+.step__text {
+	text-align: left;
+}
+
+@media all and (max-width: 992px) {
+	.tutorial-page .container--with-sidebar {
+		flex-direction: column;
+	}
+}
+
+/*  RATING  */
+
+.star {
+	background-color: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.lightgrey {
+	color: lightgrey;
+}
+
+.yellow {
+	color: yellow;
 }
