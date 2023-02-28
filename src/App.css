@@ -250,6 +250,7 @@ main {
 	border: none;
 	outline: none;
 	cursor: pointer;
+	font-size: 32px;
 }
 
 .lightgrey {
@@ -257,5 +258,5 @@ main {
 }
 
 .yellow {
-	color: yellow;
+	color: gold;
 }

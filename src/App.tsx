@@ -10,6 +10,7 @@ import ProfilePage from "./pages/ProfilePage";
 import RegistrationPage from "./pages/RegistrationPage";
 import ErrorBoundary from "./components/ErrorBoundary";
 import ReviewsPage from "./pages/ReviewsPage";
+import styles from "./AppDark.module.css";
 
 function App() {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -33,7 +34,7 @@ function App() {
 	};
 
 	return (
-		<div className="App">
+		<div className={"App " + styles.dark}>
 			<ErrorBoundary>
 				<AuthContext.Provider value={{ loggedIn: isLoggedIn, toggleAuth }}>
 					<UserContext.Provider value={{ ...user, setAuthUser }}>

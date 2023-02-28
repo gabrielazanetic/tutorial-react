@@ -14,13 +14,15 @@ const Rating: FC<RatingProps> = ({ handleRatingChange }) => {
 				return (
 					<button
 						key={index}
-						className={i <= rating ? "yellow" : "lightgrey"}
+						className="star"
 						onClick={() => {
 							setRating(i);
 							handleRatingChange(i + 1);
 						}}
 					>
-						<span className="star">&#9733;</span>
+						<span className={i <= rating ? "yellow" : "lightgrey"}>
+							&#9733;
+						</span>
 					</button>
 				);
 			})}

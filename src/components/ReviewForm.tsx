@@ -1,6 +1,7 @@
 import { FC, useRef, useState } from "react";
 import Rating from "./Rating";
 import TextInput from "./TextInput";
+import btn from "../BtnDark.module.css";
 
 interface ReviewFormProps {
 	reviewsList: any;
@@ -101,7 +102,7 @@ const ReviewForm: FC<ReviewFormProps> = ({ reviewsList, setReviewsList }) => {
 				type="submit"
 				name="submit_review"
 				id="submit_review"
-				className="btn"
+				className={"btn " + btn.dark}
 				value="Submit Review"
 			/>
 		</form>
